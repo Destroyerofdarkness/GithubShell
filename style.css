@@ -1,0 +1,270 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/*Bildet og text for animeet på homepagen*/
+.PicAndText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.PicAndText p {
+  text-align: center;
+  font-family: var(--Bangers);
+  font-size: 40px;
+  transition: transform 1.3s;
+  cursor: pointer;
+}
+.PicAndText:hover {
+  transform: scale(1.05);
+}
+/*Header adjustments*/
+header {
+  background-color: var(--basicColor); /* Default solid color */
+  display: flex;
+  flex-direction: row;
+  gap: 300px;
+  padding: 10px 20px; /* Added some padding */
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Transparent when scrolling */
+.transparent {
+  background-color: #bebebe47; /* Adjust transparency */
+  backdrop-filter: blur(10px); /* Optional blur effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+/**/
+footer {
+  width: 100%;
+  position: relative; /* Stiller footeren i forhold til det øvrige innholdet */
+  bottom: 0;
+  background-color: #333; /* Velg ønsket bakgrunnsfarge */
+  color: white; /* Velg ønsket tekstfarge */
+  text-align: center; /* Sentrer teksten */
+  padding: 10px 0; /* Legger litt plass rundt teksten */
+}
+.Titles {
+  display: flex;
+  padding-left: 10px;
+  gap: 90px;
+}
+.AnimeTitles div {
+  font-family: var(--Bangers);
+  font-size: 40px;
+  justify-content: center;
+}
+/*Kategorier i headeren*/
+h2 {
+  font-family: var(--Bangers);
+  font-size: 2em;
+  cursor: pointer;
+}
+.overlayh2 {
+  position: relative;
+  left: 900px;
+}
+/*Titlene på Animeet på overlayen*/
+h3 {
+  text-align: center;
+  font-size: 5em;
+  font-family: var(--Lalezar);
+  font-weight: 900;
+  padding-bottom: 100px;
+  position: relative;
+  bottom: 15%;
+}
+.Logo {
+  display: flex;
+  width: 15%;
+  top: 25px;
+  height: auto;
+  position: absolute;
+}
+#Logodiv {
+  width: 600px;
+  display: block;
+}
+body {
+  display: block;
+  background-color: var(--basicColor);
+}
+/*Bilde øverst på homepagen*/
+#Animepic {
+  opacity: 0.5;
+  width: 110%;
+  transform: translate(-8px, -5px);
+}
+/*Titlene på kategoriene*/
+.pTitle {
+  font-family: var(--Bangers);
+  font-size: 7ex;
+  padding-left: 2%;
+  color: var(--buttonAndText);
+}
+/*Listen på episodene*/
+.listEp {
+  font-family: var(--Bangers);
+  background-color: var(--overlayColor);
+  color: var(--white);
+  font-size: 3em;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Keep it above the scrolling list */
+}
+/*Diven for popular kategorien*/
+#PopularAnime {
+  display: flex;
+  gap: 25px;
+  padding-left: 10px;
+}
+/*Bildene for popular kategorien*/
+.PopularAnime {
+  width: 200px;
+}
+.Pillar {
+  height: 270px;
+  width: 6px;
+  background-color: var(--overlayAndList);
+}
+/*Overlayen for Animeer*/
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-size: cover;
+}
+.overlayForCategory {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-size: cover;
+}
+.headerOverlay {
+  display: flex;
+  flex-direction: column;
+}
+/* Overlay backrounds*/
+#videoOverlay1 {
+  background-image: url(Bilder/soloLevelingBackground.jpg);
+}
+#videoOverlay2 {
+  background-image: url(Bilder/onePieceBackground.avif);
+}
+#videoOverlay3 {
+  background-image: url(Bilder/soloLevelingBackground.jpg);
+}
+#videoOverlay4 {
+  background-image: url(Bilder/SuzumeBackground.jpg);
+}
+#videoOverlay5 {
+  background-color: var(--basicColor);
+}
+/*Rammen for videospilleren*/
+.video-wrapper {
+  display: flex;
+  border-radius: 10px;
+  max-width: 1500px;
+  width: 90%;
+  background-color: var(--basicColor);
+  height: 600px;
+}
+.video-wrapper p {
+  position: sticky;
+}
+/* Videoliste for videone */
+.video-list1 {
+  width: 30%;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.video-list1 p {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.video-list1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.video-list1 li {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  font-size: 3em;
+  font-family: var(--Lalezar);
+  font-weight: 100;
+  text-align: left;
+  background-color: var(--overlayAndList);
+}
+
+.video-list1 li:hover {
+  background: rgba(140, 140, 140, 0.1);
+}
+/* Video-container */
+.video-container {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  flex-direction: column;
+}
+
+/* Størrelse på video */
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+/*Knapp for å lukke overlayen*/
+.close-btn {
+  font-size: 4em;
+  color: var(--white);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: var(--Bangers);
+  transition: 100ms;
+  border-radius: 0%;
+  position: relative;
+}
+
+.close-btn:hover {
+  background: var(--overlayAndList);
+}
+#VideoPlayer1 {
+  max-width: 400px;
+}
+/* Videoliste (kun tekst) */
+:root {
+  --basicColor: #bebebe;
+  --overlayColor: #6b6b6b;
+  --buttonAndText: #d42900;
+  --overlayAndList: #b2b2b2;
+  --white: #ffffff;
+  --Bangers: "Bangers", cursive;
+  --Lalezar: "Lalezar", cursive;
+}

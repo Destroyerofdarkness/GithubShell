@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniHaven</title>
+    <link rel="shortcut icon" href="Bilder/MainLogo AniHaven.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
+    />
+  </head>
+  <header>
+    <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
+    
+    <h2 onclick="openNew()">New</h2>
+  </header>
+
+  <body>
+    <!-- Trending section -->
+    <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
+    <p class="pTitle">Trending</p>
+    <div id="PopularAnime">
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+        <p>Solo Leveling</p>
+      </div>
+      <div class="Pillar"></div>
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
+        <p>One Piece</p>
+      </div>
+      <div class="Pillar"></div>
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()" />
+        <p>Sakamoto Days</p>
+      </div>
+    </div>
+    <!-- Most popular section -->
+    <br />
+    <p class="pTitle">Most Popular</p>
+    <div id="PopularAnime">
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+        <p>Solo Leveling</p>
+      </div>
+      <div class="Pillar"></div>
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
+        <p>Suzume</p>
+      </div>
+
+      <div class="Pillar"></div>
+      <div class="PicAndText">
+        <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
+        <p>Sakamoto Days</p>
+      </div>
+    </div>
+
+    <div id="videoOverlay1" class="overlay">
+      <div class="video-wrapper">
+        <!-- Videoliste -->
+
+        <div class="video-list1">
+          <p class="listEp">List Of Episodes</p>
+          <ul>
+            <li onclick="changeVideo1('video/Ep1SoloLeveling.mkv')">1. I'm Used To It</li>
+            <li onclick="changeVideo1('video/Ep2SoloLeveling.mkv')">2. </li>
+            <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3. </li>
+            <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">Episode 4</li>
+            <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">Episode 5</li>
+            <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">Episode 6</li>
+            <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">Episode 7</li>
+            <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">Episode 8</li>
+            <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">Episode 9</li>
+            <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">Episode 10</li>
+            <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">Episode 11</li>
+            <li onclick="changeVideo1('video/Ep12SoloLeveling.mkv')">Episode 12</li>
+          </ul>
+        </div>
+        <!-- Videospiller -->
+        <div class="video-container">
+          <span class="close-btn" onclick="closeVideo1()">BACK HOME</span>
+          <video id="videoPlayer1" controls>
+            <source src="video/Ep1SoloLeveling.mkv" type="video/mp4" />
+            Din nettleser støtter ikke videoavspilling.
+          </video>
+          <h3>Solo Leveling</h3>
+        </div>
+      </div>
+    </div>
+    <div id="videoOverlay2" class="overlay">
+      <div class="video-wrapper">
+        <!-- Videoliste -->
+        <div class="video-list1">
+          <p class="listEp">List Of Episodes</p>
+          <ul>
+            <li onclick="changeVideo2('video1.mp4')">Episode 1</li>
+            <li onclick="changeVideo2('video/STANDO POWAH.mp4')">Episode 2</li>
+            <li onclick="changeVideo2('video/Suzume.mp4')">Episode 3</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 4</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 5</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 6</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 7</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 8</li>
+            <li onclick="changeVideo2('video3.mp4')">Episode 9</li>
+            <li onclick="changeVideo2('video3.mp4')">Video 10</li>
+            <li onclick="changeVideo2('video3.mp4')">Video 11</li>
+            <li onclick="changeVideo2('video3.mp4')">Video 12</li>
+            <li onclick="changeVideo2('video3.mp4')">Video 13</li>
+          </ul>
+        </div>
+        <!-- Videospiller -->
+        <div class="video-container">
+          <span class="close-btn" onclick="closeVideo2()"> BACK HOME</span>
+          <video id="videoPlayer2" controls>
+            <source src="video1.mp4" type="video/mp4" />
+            Din nettleser støtter ikke videoavspilling.
+          </video>
+          <h3>One Piece</h3>
+        </div>
+      </div>
+    </div>
+    <div id="videoOverlay4" class="overlay">
+      <div class="video-wrapper">
+        <!-- Videoliste -->
+        <div class="video-list1">
+          <p class="listEp">List Of Episodes</p>
+          <ul>
+            <li onclick="changeVideo4('video/Suzume.mp4')">Full Movie ENG Dub</li>
+          </ul>
+        </div>
+        <!-- Videospiller -->
+        <div class="video-container">
+          <span class="close-btn" onclick="closeVideo4()"> BACK HOME</span>
+          <video id="videoPlayer4" controls>
+            <source src="video/Suzume.mp4" type="video/mp4" />
+            Din nettleser støtter ikke videoavspilling.
+          </video>
+          <h3>Suzume</h3>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="videoOverlay5" class="overlayForCategory">
+        <div class="headerOverlay">
+          <img id="recPage" class="Logo"src="Bilder/Logo AniHaven.png" alt="">
+          <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+        </div>
+        <div class="bigPillar"></div>
+        
+    </div>
+    <script src="json.js"></script>
+  </body>
+  <footer>
+    <p>ddfrf</p>
+  </footer>
+</html>
