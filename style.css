@@ -25,7 +25,7 @@ header {
   background-color: var(--basicColor); /* Default solid color */
   display: flex;
   flex-direction: row;
-  gap: 300px;
+  gap: 60px;
   padding: 10px 20px; /* Added some padding */
   margin: 0;
   position: fixed;
@@ -65,12 +65,25 @@ footer {
 /*Kategorier i headeren*/
 h2 {
   font-family: var(--Bangers);
-  font-size: 2em;
+  font-size: 3em;
   cursor: pointer;
 }
+#kategorierHeader{
+padding-left: 500px;
+gap: 70px;
+}
 .overlayh2 {
-  position: relative;
-  left: 900px;
+  position: absolute;
+  left: 1200px;
+  bottom: 835px;
+}
+.bigPillar{
+  height: 2px;
+  width: 1885px;
+  position: absolute;
+  background-color: var(--white);
+  top: 150px;
+  left: 40px
 }
 /*Titlene på Animeet på overlayen*/
 h3 {
@@ -84,7 +97,7 @@ h3 {
 }
 .Logo {
   display: flex;
-  width: 15%;
+  width: 30%;
   top: 25px;
   height: auto;
   position: absolute;
@@ -92,6 +105,9 @@ h3 {
 #Logodiv {
   width: 600px;
   display: block;
+}
+#recPageLogo{
+  left: 20px;
 }
 body {
   display: block;
@@ -122,7 +138,7 @@ body {
   z-index: 10; /* Keep it above the scrolling list */
 }
 /*Diven for popular kategorien*/
-#PopularAnime {
+.PopularAnimeDiv {
   display: flex;
   gap: 25px;
   padding-left: 10px;
@@ -132,7 +148,7 @@ body {
   width: 200px;
 }
 .Pillar {
-  height: 270px;
+  height: 283px;
   width: 6px;
   background-color: var(--overlayAndList);
 }
@@ -176,17 +192,17 @@ body {
 #videoOverlay4 {
   background-image: url(Bilder/SuzumeBackground.jpg);
 }
-#videoOverlay5 {
+#NewPageOverlay {
   background-color: var(--basicColor);
 }
 /*Rammen for videospilleren*/
 .video-wrapper {
   display: flex;
   border-radius: 10px;
-  max-width: 1500px;
-  width: 90%;
+  max-width: 1400px;
+  width: 100%;
   background-color: var(--basicColor);
-  height: 600px;
+  height: 650px;
 }
 .video-wrapper p {
   position: sticky;
@@ -229,8 +245,8 @@ body {
 /* Video-container */
 .video-container {
   display: flex;
-  width: 80%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   flex-direction: column;
 }
 
@@ -255,8 +271,68 @@ video {
 .close-btn:hover {
   background: var(--overlayAndList);
 }
-#VideoPlayer1 {
-  max-width: 400px;
+/*Searchbar*/
+.search-container {
+  width: 400px;
+}
+#search-containerNew{
+  left: 700px;
+  top: 75px;
+  position: absolute;
+}
+#search-containerHeader{
+padding-top: 65px;
+left: 700px;
+position: absolute;
+;
+}
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+}
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-top: none;
+  background: var(--white);
+  max-height: 150px;
+  overflow-y: auto;
+  display: none; /* Hide initially */
+}
+.suggestions div {
+  padding: 8px;
+  cursor: pointer;
+}
+.suggestions div:hover {
+  background: var(--white);
+}
+/*Rows in New Overlay*/
+#NewPicksFirstRow{
+  position: absolute;
+  top: 200px;
+  left: 45px;
+  gap: 55px;
+}
+#NewPicksSecondRow{
+  position: absolute;
+  left: 45px;
+  gap: 55px;
+  top: 600px;
+}
+#RandomAnime{
+  width: 400px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: var(--buttonAndText);
+  font-size: 3em;
+  font-family: var(--Bangers);
+  color: var(--white);
+  position: absolute;
+  bottom: 250px;
+  left: 800px;
 }
 /* Videoliste (kun tekst) */
 :root {

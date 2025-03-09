@@ -3,60 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transparent Header on Scroll</title>
+    <title>Search Bar with OnClick Actions</title>
     <style>
-        /* Basic styles for the header */
-        body, html {
-            margin: 0;
-            padding: 0;
+        .search-container {
+            position: relative;
+            width: 300px;
         }
-
-        header {
-            position: fixed; /* Fix header at the top */
-            top: 0;
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .suggestions {
+            position: absolute;
+            top: 100%;
             left: 0;
             width: 100%;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            background-color: rgba(0, 0, 0, 1); /* Solid background initially */
-            color: white;
-            transition: background-color 0.4s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+            border-top: none;
+            background: white;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none; /* Hidden initially */
         }
-
-        /* Transparent header when scrolled */
-        .transparent {
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+        .suggestions div {
+            padding: 8px;
+            cursor: pointer;
         }
-
-        /* Dummy content for scrolling */
-        .content {
-            height: 2000px;
-            padding-top: 100px;
+        .suggestions div:hover {
+            background: #f0f0f0;
         }
     </style>
 </head>
 <body>
 
-    <header id="mainHeader">My Website</header>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="showSuggestions()">
+    <div class="suggestions" id="suggestionsBox"></div>
+</div>
 
-    <div class="content">
-        <p>Scroll down to see the effect...</p>
-    </div>
+<script>
+    // List of search suggestions with custom functions
+    const suggestions = [
+        { name: "Apple", action: function() { alert("You selected Apple!"); } },
+        { name: "Banana", action: function() { alert("You selected Banana!"); } },
+        { name: "Cherry", action: function() { console.log("Cherry clicked!"); } },
+        { name: "Grapes", action: function() { window.location.href = "https://example.com/grapes"; } },
+        { name: "Suzume", action: function() { document.body.style.backgroundColor = "yellow"; } }
+    ];
 
-    <script>
-        // JavaScript to change header background on scroll
-        window.addEventListener("scroll", function () {
-            let header = document.getElementById("mainHeader");
-            if (window.scrollY > 50) {
-                header.classList.add("transparent");
-            } else {
-                header.classList.remove("transparent");
-            }
+    function showSuggestions() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let suggestionsBox = document.getElementById("suggestionsBox");
+
+        // Clear previous suggestions
+        suggestionsBox.innerHTML = "";
+
+        // If input is empty, hide the suggestion box
+        if (input === "") {
+            suggestionsBox.style.display = "none";
+            return;
+        }
+
+        // Filter suggestions based on input
+        let filteredSuggestions = suggestions.filter(item => item.name.toLowerCase().includes(input));
+
+        if (filteredSuggestions.length === 0) {
+            suggestionsBox.style.display = "none";
+            return;
+        }
+
+        // Show filtered suggestions with onclick functions
+        filteredSuggestions.forEach(item => {
+            let div = document.createElement("div");
+            div.textContent = item.name;
+            div.onclick = item.action;  // Assign the function to onclick
+            suggestionsBox.appendChild(div);
         });
-    </script>
+
+        // Display suggestions only if there are matches
+        suggestionsBox.style.display = "block";
+    }
+
+    // Hide suggestions when clicking outside
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".search-container")) {
+            document.getElementById("suggestionsBox").style.display = "none";
+        }
+    });
+</script>
 
 </body>
 </html>

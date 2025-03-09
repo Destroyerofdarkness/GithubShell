@@ -17,15 +17,55 @@
   </head>
   <header>
     <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
-    
-    <h2 onclick="openNew()">New</h2>
+    <div id="search-containerHeader" class="search-container">
+      <input type="text" id="searchInput" placeholder="Search For Anime" onkeyup="showSuggestions2()">
+      <div class="suggestions" id="suggestionsBox"></div>
+  </div>
+  <div id="kategorierHeader"><h2 onclick="openNew()">New</h2></div>
   </header>
 
   <body>
+    <div id="NewPageOverlay" class="overlayForCategory">
+      <div class="bigPillar"></div>
+      <div class="headerOverlay">
+        <img id="recPageLogo" class="Logo"src="Bilder/Logo AniHaven.png" alt="">
+        <div id="search-containerNew" class="search-container">
+          <input type="text" id="searchInputNew" placeholder="Search For Anime" onkeyup="showSuggestions()">
+          <div class="suggestions" id="suggestionsBoxNew"></div>
+      </div>
+      <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+
+        <div id="NewPicksFirstRow" class="PopularAnimeDiv">
+          <div class="PicAndText">
+            <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+            <p>Solo Leveling</p>
+          </div>
+          <div class="PicAndText">
+            <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
+            <p>Suzume</p>
+          </div>
+          <div class="PicAndText">
+            <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
+            <p>Sakamoto Days</p>
+          </div>
+        </div>
+
+        <div id="NewPicksSecondRow" class="PopularAnimeDiv">         
+          <div class="PicAndText">
+            <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
+            <p>One Piece</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      
+  </div>
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
+    <button id="RandomAnime" onclick="takeMeAnywhere()">Take Me Anywhere</button>
     <p class="pTitle">Trending</p>
-    <div id="PopularAnime">
+    <div class="PopularAnimeDiv">
       <div class="PicAndText">
         <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
         <p>Solo Leveling</p>
@@ -44,7 +84,7 @@
     <!-- Most popular section -->
     <br />
     <p class="pTitle">Most Popular</p>
-    <div id="PopularAnime">
+    <div class="PopularAnimeDiv">
       <div class="PicAndText">
         <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
         <p>Solo Leveling</p>
@@ -69,7 +109,7 @@
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
           <ul>
-            <li onclick="changeVideo1('video/Ep1SoloLeveling.mkv')">1. I'm Used To It</li>
+            <li onclick="changeVideo1('')">1. I'm Used To It</li>
             <li onclick="changeVideo1('video/Ep2SoloLeveling.mkv')">2. </li>
             <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3. </li>
             <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">Episode 4</li>
@@ -85,7 +125,7 @@
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo1()">BACK HOME</span>
+          <span class="close-btn" onclick="closeVideo1()">GO BACK</span>
           <video id="videoPlayer1" controls>
             <source src="video/Ep1SoloLeveling.mkv" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
@@ -117,7 +157,7 @@
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo2()"> BACK HOME</span>
+          <span class="close-btn" onclick="closeVideo2()">GO BACK</span>
           <video id="videoPlayer2" controls>
             <source src="video1.mp4" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
@@ -137,7 +177,7 @@
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo4()"> BACK HOME</span>
+          <span class="close-btn" onclick="closeVideo4()">GO BACK</span>
           <video id="videoPlayer4" controls>
             <source src="video/Suzume.mp4" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
@@ -149,15 +189,7 @@
 
 
 
-
-    <div id="videoOverlay5" class="overlayForCategory">
-        <div class="headerOverlay">
-          <img id="recPage" class="Logo"src="Bilder/Logo AniHaven.png" alt="">
-          <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
-        </div>
-        <div class="bigPillar"></div>
-        
-    </div>
+<!-- Overlay for New Anime Page -->
     <script src="json.js"></script>
   </body>
   <footer>
