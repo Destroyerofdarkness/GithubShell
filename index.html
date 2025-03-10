@@ -16,50 +16,56 @@
     />
   </head>
   <header>
-    <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
-    <div id="search-containerHeader" class="search-container">
+      <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
+    <div class="search-container">
       <input type="text" id="searchInput" placeholder="Search For Anime" onkeyup="showSuggestions2()">
       <div class="suggestions" id="suggestionsBox"></div>
-  </div>
+    </div>
   <div id="kategorierHeader"><h2 onclick="openNew()">New</h2></div>
   </header>
 
   <body>
     <div id="NewPageOverlay" class="overlayForCategory">
-      <div class="bigPillar"></div>
-      <div class="headerOverlay">
-        <img id="recPageLogo" class="Logo"src="Bilder/Logo AniHaven.png" alt="">
-        <div id="search-containerNew" class="search-container">
-          <input type="text" id="searchInputNew" placeholder="Search For Anime" onkeyup="showSuggestions()">
-          <div class="suggestions" id="suggestionsBoxNew"></div>
-      </div>
-      <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
-
-        <div id="NewPicksFirstRow" class="PopularAnimeDiv">
-          <div class="PicAndText">
-            <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
-            <p>Solo Leveling</p>
+      
+        <div class="headerOverlay">
+            <img class="Logo" src="Bilder/Logo AniHaven.png" alt="">
+            <div class="search-container">
+              <input type="text" id="searchInputNew" placeholder="Search For Anime" onkeyup="showSuggestions()">
+              <div class="suggestions" id="suggestionsBoxNew"></div>
+            </div>
+          <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+        </div>
+        
+        <div class="bodyOverlay">
+          <div class="bigPillar"></div>
+          
+          <div>
+            <div class="TitleOverlay"><p>New</p></div>
+          <div id="NewPicksFirstRow" class="PopularAnimeDiv">
+            <div class="PicAndText">
+              <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+              <p>Solo Leveling</p>
+            </div>
+            <div class="PicAndText">
+              <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
+              <p>Suzume</p>
+            </div>
+            <div class="PicAndText">
+              <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
+              <p>Sakamoto Days</p>
+            </div>
           </div>
-          <div class="PicAndText">
-            <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
-            <p>Suzume</p>
-          </div>
-          <div class="PicAndText">
-            <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
-            <p>Sakamoto Days</p>
+    
+          <div id="NewPicksSecondRow" class="PopularAnimeDiv">         
+            <div class="PicAndText">
+              <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
+              <p>One Piece</p>
+            </div>
           </div>
         </div>
-
-        <div id="NewPicksSecondRow" class="PopularAnimeDiv">         
-          <div class="PicAndText">
-            <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
-            <p>One Piece</p>
-          </div>
-          </div>
-        </div>
-      </div>
+    </div>
       
-      
+    </div>
   </div>
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
@@ -167,12 +173,20 @@
       </div>
     </div>
     <div id="videoOverlay4" class="overlay">
+      <div class="headerOverlay">
+        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="">
+        <div class="search-container">
+          <input type="text" id="searchInputVideo" placeholder="Search For Anime" onkeyup="showSuggestions3()">
+          <div class="suggestions" id="suggestionsBoxVideo"></div>
+        </div>
+      <h2 class="overlayh2" onclick="closeVideo4()">Homepage</h2>
+    </div>
       <div class="video-wrapper">
         <!-- Videoliste -->
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
           <ul>
-            <li onclick="changeVideo4('video/Suzume.mp4')">Full Movie ENG Dub</li>
+            <li onclick="changeVideo4('video/Suzume.mp4')">Full Movie Dub</li>
           </ul>
         </div>
         <!-- Videospiller -->
