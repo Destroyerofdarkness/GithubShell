@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
     />
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins?query=poppins">
   </head>
   <header>
       <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
@@ -21,8 +22,20 @@
       <input type="text" id="searchInput" placeholder="Search For Anime" onkeyup="showSuggestions2()">
       <div class="suggestions" id="suggestionsBox"></div>
     </div>
-  <div id="kategorierHeader"><h2 onclick="openNew()">New</h2></div>
-  </header>
+  <div id="kategorierHeader"><h2 onclick="openNew()">New</h2>
+    <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+    <nav class="nav-menu" id="navMenu">
+      <ul>
+        <li onclick="takeMeAnywhere()">Startpage</li>
+        <li><a href=""></a></li>
+        <li onclick="openNew()">New</li>
+      </ul>
+    </nav>
+  <div class="overlayForMenu" id="overlayForMenu" onclick="closeMenu()"></div>
+  </div>
+
+  
+    </header>
 
   <body>
     <div id="NewPageOverlay" class="overlayForCategory">
@@ -64,8 +77,9 @@
           </div>
         </div>
     </div>
-      
-    </div>
+
+
+    
   </div>
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
@@ -114,20 +128,22 @@
 
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
-          <ul>
-            <li onclick="changeVideo1('')">1. I'm Used To It</li>
-            <li onclick="changeVideo1('video/Ep2SoloLeveling.mkv')">2. </li>
-            <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3. </li>
-            <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">Episode 4</li>
-            <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">Episode 5</li>
-            <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">Episode 6</li>
-            <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">Episode 7</li>
-            <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">Episode 8</li>
-            <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">Episode 9</li>
-            <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">Episode 10</li>
-            <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">Episode 11</li>
-            <li onclick="changeVideo1('video/Ep12SoloLeveling.mkv')">Episode 12</li>
-          </ul>
+          <nav>
+            <ul>
+              <li onclick="changeVideo1('https://akershusfylke-my.sharepoint.com/:v:/g/personal/dawidc_afk_no/EYP75ycpUANGngOg-j8uLOIBpuCija9v6r4uIXKaaId6Wg?e=J6abEG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D')">1. I'm Used To It</li>
+              <li onclick="changeVideo1('Ep2SoloLeveling.mkv')">2. </li>
+              <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3. </li>
+              <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">Episode 4</li>
+              <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">Episode 5</li>
+              <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">Episode 6</li>
+              <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">Episode 7</li>
+              <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">Episode 8</li>
+              <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">Episode 9</li>
+              <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">Episode 10</li>
+              <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">Episode 11</li>
+              <li onclick="changeVideo1('https://player.vimeo.com/video/1064648409')">Episode 12</li>
+            </ul>
+          </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
