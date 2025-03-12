@@ -14,90 +14,145 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap"
     />
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins?query=poppins">
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/specimen/Poppins?query=poppins"
+    />
   </head>
   <header>
-      <div id="Logodiv"><img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" /></div>
+    <div id="Logodiv">
+      <img class="Logo" src="Bilder/Logo AniHaven.png" alt="Logo" />
+    </div>
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search For Anime" onkeyup="showSuggestions2()">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search For Anime"
+        onkeyup="showSuggestions2()"
+      />
       <div class="suggestions" id="suggestionsBox"></div>
     </div>
-  <div id="kategorierHeader"><h2 onclick="openNew()">New</h2>
-    <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
-    <nav class="nav-menu" id="navMenu">
-      <ul>
-        <li onclick="takeMeAnywhere()">Startpage</li>
-        <li><a href=""></a></li>
-        <li onclick="openNew()">New</li>
-      </ul>
-    </nav>
-  <div class="overlayForMenu" id="overlayForMenu" onclick="closeMenu()"></div>
-  </div>
-
-  
-    </header>
+    <div id="kategorierHeader">
+      <h2 onclick="openNew()">New</h2>
+      <img src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+    </div>
+      
+  </header>
 
   <body>
+  <div id="menuSection">
+    <div class="MenuPillar">
+      <div>
+        <button id="closeBtnMenu" onclick="closeMenuSection()">GO BACK</button>
+         <nav>
+          <p>Menu Section</p>
+          <ul>
+            <li>ggg</li>
+            <li></li>
+          </ul>
+         </nav>
+      </div> 
+    </div>
+  </div>
+
     <div id="NewPageOverlay" class="overlayForCategory">
-      
-        <div class="headerOverlay">
-            <img class="Logo" src="Bilder/Logo AniHaven.png" alt="">
-            <div class="search-container">
-              <input type="text" id="searchInputNew" placeholder="Search For Anime" onkeyup="showSuggestions()">
-              <div class="suggestions" id="suggestionsBoxNew"></div>
-            </div>
-          <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+      <div class="headerOverlay">
+        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInputNew"
+            placeholder="Search For Anime"
+            onkeyup="showSuggestions()"
+          />
+          <div class="suggestions" id="suggestionsBoxNew"></div>
         </div>
-        
-        <div class="bodyOverlay">
-          <div class="bigPillar"></div>
-          
-          <div>
-            <div class="TitleOverlay"><p>New</p></div>
+        <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+      </div>
+
+      <div class="bodyOverlay">
+        <div class="bigPillar"></div>
+
+        <div>
+          <div class="TitleOverlay"><p>New</p></div>
           <div id="NewPicksFirstRow" class="PopularAnimeDiv">
             <div class="PicAndText">
-              <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+              <img
+                class="PopularAnime"
+                src="Bilder/soloLeveling.jpg"
+                alt=""
+                onclick="openVideo1()"
+              />
               <p>Solo Leveling</p>
             </div>
             <div class="PicAndText">
-              <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
+              <img
+                class="PopularAnime"
+                src="Bilder/Suzume.jpg"
+                alt=""
+                onclick="openVideo4()"
+              />
               <p>Suzume</p>
             </div>
             <div class="PicAndText">
-              <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
+              <img
+                class="PopularAnime"
+                src="Bilder/SakamotoDays.jpg"
+                alt=""
+                onclick="openVideo3()"
+              />
               <p>Sakamoto Days</p>
             </div>
           </div>
-    
-          <div id="NewPicksSecondRow" class="PopularAnimeDiv">         
+
+          <div id="NewPicksSecondRow" class="PopularAnimeDiv">
             <div class="PicAndText">
-              <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
+              <img
+                class="PopularAnime"
+                src="Bilder/OnePiece.jpg"
+                alt=""
+                onclick="openVideo2()"
+              />
               <p>One Piece</p>
             </div>
           </div>
         </div>
+      </div>
     </div>
-
-
-    
-  </div>
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
-    <button id="RandomAnime" onclick="takeMeAnywhere()">Take Me Anywhere</button>
+    <button id="RandomAnime" onclick="takeMeAnywhere()">
+      Take Me Anywhere
+    </button>
     <p class="pTitle">Trending</p>
     <div class="PopularAnimeDiv">
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+        <img
+          class="PopularAnime"
+          src="Bilder/soloLeveling.jpg"
+          alt=""
+          onclick="openVideo1()"
+        />
         <p>Solo Leveling</p>
       </div>
       <div class="Pillar"></div>
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/OnePiece.jpg" alt="" onclick="openVideo2()" />
+        <img
+          class="PopularAnime"
+          src="Bilder/OnePiece.jpg"
+          alt=""
+          onclick="openVideo2()"
+        />
         <p>One Piece</p>
       </div>
       <div class="Pillar"></div>
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()" />
+        <img
+          class="PopularAnime"
+          src="Bilder/SakamotoDays.jpg"
+          alt=""
+          onclick="openVideo3()"
+        />
         <p>Sakamoto Days</p>
       </div>
     </div>
@@ -106,18 +161,33 @@
     <p class="pTitle">Most Popular</p>
     <div class="PopularAnimeDiv">
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/soloLeveling.jpg" alt="" onclick="openVideo1()" />
+        <img
+          class="PopularAnime"
+          src="Bilder/soloLeveling.jpg"
+          alt=""
+          onclick="openVideo1()"
+        />
         <p>Solo Leveling</p>
       </div>
       <div class="Pillar"></div>
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/Suzume.jpg" alt="" onclick="openVideo4()"/>
+        <img
+          class="PopularAnime"
+          src="Bilder/Suzume.jpg"
+          alt=""
+          onclick="openVideo4()"
+        />
         <p>Suzume</p>
       </div>
 
       <div class="Pillar"></div>
       <div class="PicAndText">
-        <img class="PopularAnime" src="Bilder/SakamotoDays.jpg" alt="" onclick="openVideo3()"/>
+        <img
+          class="PopularAnime"
+          src="Bilder/SakamotoDays.jpg"
+          alt=""
+          onclick="openVideo3()"
+        />
         <p>Sakamoto Days</p>
       </div>
     </div>
@@ -130,18 +200,42 @@
           <p class="listEp">List Of Episodes</p>
           <nav>
             <ul>
-              <li onclick="changeVideo1('https://akershusfylke-my.sharepoint.com/:v:/g/personal/dawidc_afk_no/EYP75ycpUANGngOg-j8uLOIBpuCija9v6r4uIXKaaId6Wg?e=J6abEG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D')">1. I'm Used To It</li>
-              <li onclick="changeVideo1('Ep2SoloLeveling.mkv')">2. </li>
-              <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3. </li>
-              <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">Episode 4</li>
-              <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">Episode 5</li>
-              <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">Episode 6</li>
-              <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">Episode 7</li>
-              <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">Episode 8</li>
-              <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">Episode 9</li>
-              <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">Episode 10</li>
-              <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">Episode 11</li>
-              <li onclick="changeVideo1('https://player.vimeo.com/video/1064648409')">Episode 12</li>
+              <li
+                onclick="changeVideo1('https://akershusfylke-my.sharepoint.com/:v:/g/personal/dawidc_afk_no/EYP75ycpUANGngOg-j8uLOIBpuCija9v6r4uIXKaaId6Wg?e=J6abEG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D')"
+              >
+                1. I'm Used To It
+              </li>
+              <li onclick="changeVideo1('Ep2SoloLeveling.mkv')">2.</li>
+              <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3.</li>
+              <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">
+                Episode 4
+              </li>
+              <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">
+                Episode 5
+              </li>
+              <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">
+                Episode 6
+              </li>
+              <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">
+                Episode 7
+              </li>
+              <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">
+                Episode 8
+              </li>
+              <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">
+                Episode 9
+              </li>
+              <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">
+                Episode 10
+              </li>
+              <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">
+                Episode 11
+              </li>
+              <li
+                onclick="changeVideo1('https://player.vimeo.com/video/1064648409')"
+              >
+                Episode 12
+              </li>
             </ul>
           </nav>
         </div>
@@ -161,6 +255,7 @@
         <!-- Videoliste -->
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
+          <nav>
           <ul>
             <li onclick="changeVideo2('video1.mp4')">Episode 1</li>
             <li onclick="changeVideo2('video/STANDO POWAH.mp4')">Episode 2</li>
@@ -176,6 +271,7 @@
             <li onclick="changeVideo2('video3.mp4')">Video 12</li>
             <li onclick="changeVideo2('video3.mp4')">Video 13</li>
           </ul>
+        </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
@@ -190,20 +286,27 @@
     </div>
     <div id="videoOverlay4" class="overlay">
       <div class="headerOverlay">
-        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="">
+        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
         <div class="search-container">
-          <input type="text" id="searchInputVideo" placeholder="Search For Anime" onkeyup="showSuggestions3()">
+          <input
+            type="text"
+            id="searchInputVideo"
+            placeholder="Search For Anime"
+            onkeyup="showSuggestions3()"
+          />
           <div class="suggestions" id="suggestionsBoxVideo"></div>
         </div>
-      <h2 class="overlayh2" onclick="closeVideo4()">Homepage</h2>
-    </div>
+        <h2 class="overlayh2" onclick="closeVideo4()">Homepage</h2>
+      </div>
       <div class="video-wrapper">
         <!-- Videoliste -->
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
+          <nav>
           <ul>
             <li onclick="changeVideo4('video/Suzume.mp4')">Full Movie Dub</li>
           </ul>
+        </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
@@ -217,9 +320,7 @@
       </div>
     </div>
 
-
-
-<!-- Overlay for New Anime Page -->
+    <!-- Overlay for New Anime Page -->
     <script src="json.js"></script>
   </body>
   <footer>

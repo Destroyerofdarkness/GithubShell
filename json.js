@@ -1,7 +1,10 @@
+function openMenuSection(){
+    document.getElementById("menuSection").style.display = "flex"
+}
 
-
-
-// Funksjon for å åpne video-overlay
+function closeMenuSection(){
+    document.getElementById("menuSection").style.display = "none"
+}
 
 // Overlayen for New Kategorien
 function openNew() {

@@ -35,7 +35,8 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out,
+    backdrop-filter 0.4s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -71,18 +72,18 @@ h2 {
   font-size: 3em;
   cursor: pointer;
 }
-.TitleOverlay{
+.TitleOverlay {
   display: flex;
   font-family: var(--Bangers);
   font-size: 5em;
   margin: auto;
   justify-content: center;
 }
-#kategorierHeader{
+#kategorierHeader {
   display: flex;
-gap: 70px;
+  gap: 70px;
 }
-.bigPillar{
+.bigPillar {
   margin: auto;
   height: 5px;
   width: 1885px;
@@ -102,8 +103,6 @@ h3 {
   display: flex;
   height: 100px; /* Adjust size */
   width: auto;
-  
-
 }
 #Logodiv {
   width: 600px;
@@ -187,10 +186,11 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out,
+    backdrop-filter 0.4s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.bodyOverlay{
+.bodyOverlay {
   padding-top: 90px;
   display: flex;
   flex-direction: column;
@@ -213,8 +213,8 @@ body {
   display: none;
   flex-direction: column;
   min-height: 100vh;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 /*Rammen for videospilleren*/
 .video-wrapper {
@@ -295,14 +295,14 @@ video {
 /*Searchbar*/
 .search-container {
   flex-grow: 1; /* Allows it to stretch */
-    max-width: 400px; /* Adjust width */
-padding-top: 50px;
+  max-width: 400px; /* Adjust width */
+  padding-top: 50px;
 }
 input {
   width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 .suggestions {
   display: flex;
@@ -329,16 +329,16 @@ input {
   cursor: pointer;
 }
 .suggestions div:hover {
-  background: var(--basicColor)
+  background: var(--basicColor);
 }
 /*Rows in New Overlay*/
-#NewPicksFirstRow{
+#NewPicksFirstRow {
   gap: 55px;
 }
-#NewPicksSecondRow{
+#NewPicksSecondRow {
   gap: 55px;
 }
-#RandomAnime{
+#RandomAnime {
   width: 400px;
   height: 100px;
   border-radius: 100px;
@@ -352,58 +352,52 @@ input {
 }
 /* Videoliste (kun tekst) */
 /*section*/
-.burger-menu {
-  font-size: 30px;
-  cursor: pointer;
-  display: block;
-}
- 
-.nav-menu {
+#menuSection {
   position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
+  flex-direction: row;
+  flex-direction: column;
+  background-color: var(--overlayColorTransparent);
+
+  width: 100%;
   height: 100%;
-  background-color: white;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  transition: left 0.3s ease-in-out;
-  padding-top: 60px;
+  z-index: 1000;
+  background-size: cover;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
- 
-.nav-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.MenuPillar {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 20%;
+  background-color: var(--overlayAndList);
+  margin-left: auto;
+  opacity: 100%;
 }
- 
-.nav-menu ul li {
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  display: block;
+.MenuPillar div nav p{
+  font-size: 3em;
+  font-family: var(--Lalezar);
 }
- 
-.nav-menu ul li a {
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  display: block;
-}
- 
-.nav-menu.open {
-  left: 0;
+.MenuPillar div nav{
+  padding-left: 60px;
 }
 
-
-
+#closeBtnMenu{
+  width: max-content;
+  font-size: 3em;
+  justify-content: center;
+  width: 400px;
+  height: 100px;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.5);
+}
 :root {
   --basicColor: #bebebe;
   --overlayColor: #6b6b6b;
   --buttonAndText: #d42900;
   --overlayAndList: #b2b2b2;
   --white: #ffffff;
+  --overlayColorTransparent: #6b6b6b82;
   --Bangers: "Bangers", cursive;
   --Lalezar: "Lalezar", cursive;
 }
