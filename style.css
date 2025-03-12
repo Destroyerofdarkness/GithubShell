@@ -83,6 +83,12 @@ h2 {
   display: flex;
   gap: 70px;
 }
+#kategorierHeader img {
+padding-top: 35px;
+display: flex;
+width: auto;
+height: 60px;
+}
 .bigPillar {
   margin: auto;
   height: 5px;
@@ -353,11 +359,11 @@ input {
 /* Videoliste (kun tekst) */
 /*section*/
 #menuSection {
+  display: none;
   position: fixed;
   flex-direction: row;
   flex-direction: column;
   background-color: var(--overlayColorTransparent);
-
   width: 100%;
   height: 100%;
   z-index: 1000;
@@ -389,7 +395,12 @@ input {
   width: 400px;
   height: 100px;
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--overlayColor);
+  transition: 100ms;
+}
+
+#closeBtnMenu:hover{
+  background-color: var(--basicColor);
 }
 :root {
   --basicColor: #bebebe;

@@ -6,6 +6,22 @@ function closeMenuSection(){
     document.getElementById("menuSection").style.display = "none"
 }
 
+function closeVideo1() {
+    document.getElementById("videoOverlay1").style.display = "none";
+    document.getElementById("videoPlayer1").pause(); // Stopper videoen når den lukkes
+}
+function closeVideo2() {
+    document.getElementById("videoOverlay2").style.display = "none";
+    document.getElementById("videoPlayer2").pause(); // Stopper videoen når den lukkes
+}
+function closeVideo3() {
+    document.getElementById("videoOverlay3").style.display = "none";
+    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
+}
+function closeVideo4() {
+    document.getElementById("videoOverlay4").style.display = "none";
+    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
+}
 // Overlayen for New Kategorien
 function openNew() {
     document.getElementById("NewPageOverlay").style.display = "flex";
@@ -30,22 +46,7 @@ function openVideo4() {
     document.getElementById("videoPlayer").play(); // Starter videoen automatisk
 }
 // Funksjon for å lukke video-overlay
-function closeVideo1() {
-    document.getElementById("videoOverlay1").style.display = "none";
-    document.getElementById("videoPlayer1").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo2() {
-    document.getElementById("videoOverlay2").style.display = "none";
-    document.getElementById("videoPlayer2").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo3() {
-    document.getElementById("videoOverlay3").style.display = "none";
-    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo4() {
-    document.getElementById("videoOverlay4").style.display = "none";
-    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
-}
+
 function changeVideo1(videoSrc) {
     let videoPlayer = document.getElementById("videoPlayer1");
     videoPlayer.src = videoSrc;
@@ -232,23 +233,3 @@ document.addEventListener("click", function(event) {
 });
 
 
-//Menu section 
-function toggleMenu() {
-    const menu = document.getElementById("navMenu");
-    const overlay = document.getElementById("overlayForMenu");
-    menu.classList.toggle("open");
-    overlay.classList.toggle("show");
-  }
-   
-  function closeMenu() {
-    document.getElementById("navMenu").classList.remove("open");
-    document.getElementById("overlayForMenu").classList.remove("show");
-  }
-   
-  document.addEventListener("click", function (event) {
-    const menu = document.getElementById("navMenu");
-    const burger = document.querySelector(".burger-menu");
-    if (!menu.contains(event.target) && !burger.contains(event.target)) {
-      closeMenu();
-    }
-  });
