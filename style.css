@@ -81,7 +81,11 @@ h2 {
 }
 #kategorierHeader {
   display: flex;
-  gap: 70px;
+  gap: 400px;
+}
+#kategorierHeader div{
+  display: flex;
+  gap: 100px;
 }
 #kategorierHeader img {
 padding-top: 35px;
@@ -202,16 +206,16 @@ body {
   flex-direction: column;
 }
 /* Overlay backrounds*/
-#videoOverlay1 {
+#SoloLeveling {
   background-image: url(Bilder/soloLevelingBackground.jpg);
 }
-#videoOverlay2 {
+#OnePiece {
   background-image: url(Bilder/onePieceBackground.avif);
 }
 #videoOverlay3 {
   background-image: url(Bilder/soloLevelingBackground.jpg);
 }
-#videoOverlay4 {
+#Suzume {
   background-image: url(Bilder/SuzumeBackground.jpg);
 }
 #NewPageOverlay {

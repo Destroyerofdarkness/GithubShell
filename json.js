@@ -5,23 +5,6 @@ function openMenuSection(){
 function closeMenuSection(){
     document.getElementById("menuSection").style.display = "none"
 }
-
-function closeVideo1() {
-    document.getElementById("videoOverlay1").style.display = "none";
-    document.getElementById("videoPlayer1").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo2() {
-    document.getElementById("videoOverlay2").style.display = "none";
-    document.getElementById("videoPlayer2").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo3() {
-    document.getElementById("videoOverlay3").style.display = "none";
-    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
-}
-function closeVideo4() {
-    document.getElementById("videoOverlay4").style.display = "none";
-    document.getElementById("videoPlayer").pause(); // Stopper videoen når den lukkes
-}
 // Overlayen for New Kategorien
 function openNew() {
     document.getElementById("NewPageOverlay").style.display = "flex";
@@ -29,36 +12,38 @@ function openNew() {
 function closeNew() {
     document.getElementById("NewPageOverlay").style.display = "none";
 }
-function openVideo1() {
-    document.getElementById("videoOverlay1").style.display = "flex";
-    document.getElementById("videoPlayer").play(); // Starter videoen automatisk
-}
-function openVideo2() {
-    document.getElementById("videoOverlay2").style.display = "flex";
-    document.getElementById("videoPlayer").play(); // Starter videoen automatisk
-}
-function openVideo3() {
-    document.getElementById("videoOverlay3").style.display = "flex";
-    document.getElementById("videoPlayer").play(); // Starter videoen automatisk
-}
-function openVideo4() {
-    document.getElementById("videoOverlay4").style.display = "flex";
-    document.getElementById("videoPlayer").play(); // Starter videoen automatisk
-}
-// Funksjon for å lukke video-overlay
 
-function changeVideo1(videoSrc) {
-    let videoPlayer = document.getElementById("videoPlayer1");
+function openOverlay(id) {
+    // Close all overlays
+    var overlays = document.getElementsByClassName('overlay');
+    for (var i = 0; i < overlays.length; i++) {
+      overlays[i].style.display = 'none';
+    }
+    
+    // Open the selected overlay
+    document.getElementById(id).style.display = 'flex';
+  }
+  
+  function closeOverlay(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  function closeVideo(id) {
+    document.getElementById(id).style.display = "none";
+  }
+// Funksjon for å bytte video
+
+function SoloLevelingChange(videoSrc) {
+    let videoPlayer = document.getElementById("SoloLevelingPlayer");
     videoPlayer.src = videoSrc;
     videoPlayer.play(); // Starter automatisk
 }
-function changeVideo2(videoSrc) {
-    let videoPlayer = document.getElementById("videoPlayer2");
+function OnePieceChange(videoSrc) {
+    let videoPlayer = document.getElementById("OnePiecePlayer");
     videoPlayer.src = videoSrc;
     videoPlayer.play(); // Starter automatisk
 }
-function changeVideo4(videoSrc) {
-    let videoPlayer = document.getElementById("videoPlayer4");
+function SuzumeChange(videoSrc) {
+    let videoPlayer = document.getElementById("SuzumePlayer");
     videoPlayer.src = videoSrc;
     videoPlayer.play(); // Starter automatisk
 }
@@ -76,108 +61,30 @@ window.addEventListener("scroll", function () {
 });
 //Transparent scrolling for overlay headeren
 // Funksjon for knappen Take me Anywhere
-const randomFunctions = [openVideo1, openVideo2, openVideo4];
+const randomId = ['OnePiece', 'SoloLeveling', 'Suzume'];
 
 function takeMeAnywhere() {
-    let randomFunction = Math.floor(Math.random() * randomFunctions.length)
-    randomFunctions[randomFunction]();
+    let randomFunction = Math.floor(Math.random() * randomId.length)
+    const id = randomId[randomFunction];
+
+    openOverlay(id)
 }
 
 
 //SearchBar for Overlayen New
 const suggestions = [
-    { name: "One Piece", image:"Bilder/OnePiece.jpg", action: function() { openVideo2(); } },
-    { name: "Solo Leveling", image:"Bilder/soloLeveling.jpg", action: function() { openVideo1(); } },
-    { name: "Suzume", image:"Bilder/Suzume.jpg", action:  function() { openVideo4(); } }
+    { name: "One Piece", image:"Bilder/OnePiece.jpg", action: function() { openOverlay('OnePiece'); } },
+    { name: "Solo Leveling", image:"Bilder/soloLeveling.jpg", action: function() { openOverlay('SoloLeveling'); } },
+    { name: "Suzume", image:"Bilder/Suzume.jpg", action:  function() { openOverlay('Suzume'); } }
 ];
 
 // Function to show suggestions
-function showSuggestions() {
-    let input = document.getElementById("searchInputNew").value.toLowerCase();
-    let suggestionsBox = document.getElementById("suggestionsBoxNew");
 
-    // Clear previous suggestions
-    suggestionsBox.innerHTML = "";
-
-    // If input is empty, hide the suggestion box
-    if (input === "") {
-        suggestionsBox.style.display = "none";
-        return;
-    }
-
-    // Filter suggestions based on input
-    let filteredSuggestions = suggestions.filter(item => item.name.toLowerCase().includes(input));
-
-    if (filteredSuggestions.length === 0) {
-        suggestionsBox.style.display = "none";
-        return;
-    }
-
-    // Show filtered suggestions with functions
-    filteredSuggestions.forEach(item => {
-        let div = document.createElement("div");
-        div.textContent = item.name;
-        div.onclick = item.action;  // Link the function to the onclick event
-        suggestionsBox.appendChild(div);
-    });
-
-    // Display suggestions only if there are matches
-    suggestionsBox.style.display = "block";
-}
-
-// Hide suggestions when clicking outside
-document.addEventListener("click", function(event) {
-    if (!event.target.closest("search-container")) {
-        document.getElementById("suggestionsBoxNew").style.display = "none";
-    }
-});
-
-
-//SearchBar for Headeren i main siden
-function showSuggestions2() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let suggestionsBox = document.getElementById("suggestionsBox");
-
-    // Clear previous suggestions
-    suggestionsBox.innerHTML = "";
-
-    // If input is empty, hide the suggestion box
-    if (input === "") {
-        suggestionsBox.style.display = "none";
-        return;
-    }
-
-    // Filter suggestions based on input
-    let filteredSuggestions = suggestions.filter(item => item.name.toLowerCase().includes(input));
-
-    if (filteredSuggestions.length === 0) {
-        suggestionsBox.style.display = "none";
-        return;
-    }
-
-    // Show filtered suggestions with functions
-    filteredSuggestions.forEach(item => {
-        let div = document.createElement("div");
-        div.textContent = item.name;
-        div.onclick = item.action;  // Link the function to the onclick event
-        suggestionsBox.appendChild(div);
-    });
-
-    // Display suggestions only if there are matches
-    suggestionsBox.style.display = "block";
-}
-
-// Hide suggestions when clicking outside
-document.addEventListener("click", function(event) {
-    if (!event.target.closest(".search-container")) {
-        document.getElementById("suggestionsBox").style.display = "none";
-    }
-});
 
 //Suggestions for SearchBar i Suzume playeren
-function showSuggestions3() {
-    let input = document.getElementById("searchInputVideo").value.toLowerCase();
-    let suggestionsBox = document.getElementById("suggestionsBoxVideo");
+function showResults(inputId, suggestionsBoxId) {
+    let input = document.getElementById(inputId).value.toLowerCase();
+    let suggestionsBox = document.getElementById(suggestionsBoxId);
 
     // Clear previous suggestions
     suggestionsBox.innerHTML = "";
@@ -227,9 +134,14 @@ function showSuggestions3() {
 
 // Hide suggestions when clicking outside
 document.addEventListener("click", function(event) {
-    if (!event.target.closest(".search-container")) {
-        document.getElementById("suggestionsBoxVideo").style.display = "none";
-    }
+    let searchContainers = document.querySelectorAll(".search-container");
+    searchContainers.forEach(container => {
+        if (!event.target.closest(".search-container")) {
+            let suggestionsBox = container.querySelector(".suggestions");
+            if (suggestionsBox) {
+                suggestionsBox.style.display = "none";
+            }
+        }
+    });
 });
-
 

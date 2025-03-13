@@ -28,13 +28,14 @@
         type="text"
         id="searchInput"
         placeholder="Search For Anime"
-        onkeyup="showSuggestions2()"
+        onkeyup="showResults('searchInput', 'suggestionsBox' )"
       />
       <div class="suggestions" id="suggestionsBox"></div>
     </div>
     <div id="kategorierHeader">
       <div>
       <h2 onclick="openNew()">New</h2>
+      <h2>Popular</h2>
     </div>
       <img src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
     </div>
@@ -62,10 +63,10 @@
         <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
         <div class="search-container">
           <input
-            type="text"
-            id="searchInputNew"
-            placeholder="Search For Anime"
-            onkeyup="showSuggestions()"
+              type="text"
+              id="searchInputNew"
+              placeholder="Search For Anime"
+              onkeyup="showResults('searchInputNew', 'suggestionsBoxNew' )"
           />
           <div class="suggestions" id="suggestionsBoxNew"></div>
         </div>
@@ -83,7 +84,7 @@
                 class="PopularAnime"
                 src="Bilder/soloLeveling.jpg"
                 alt=""
-                onclick="openVideo1()"
+                onclick="openOverlay('SoloLeveling')"
               />
               <p>Solo Leveling</p>
             </div>
@@ -92,7 +93,7 @@
                 class="PopularAnime"
                 src="Bilder/Suzume.jpg"
                 alt=""
-                onclick="openVideo4()"
+                onclick="openOverlay('Suzume')"
               />
               <p>Suzume</p>
             </div>
@@ -113,7 +114,7 @@
                 class="PopularAnime"
                 src="Bilder/OnePiece.jpg"
                 alt=""
-                onclick="openVideo2()"
+                onclick="openOverlay('OnePiece')"
               />
               <p>One Piece</p>
             </div>
@@ -133,7 +134,7 @@
           class="PopularAnime"
           src="Bilder/soloLeveling.jpg"
           alt=""
-          onclick="openVideo1()"
+          onclick="openOverlay('SoloLeveling')"
         />
         <p>Solo Leveling</p>
       </div>
@@ -143,7 +144,7 @@
           class="PopularAnime"
           src="Bilder/OnePiece.jpg"
           alt=""
-          onclick="openVideo2()"
+          onclick="openOverlay('OnePiece')"
         />
         <p>One Piece</p>
       </div>
@@ -167,7 +168,7 @@
           class="PopularAnime"
           src="Bilder/soloLeveling.jpg"
           alt=""
-          onclick="openVideo1()"
+          onclick="openOverlay('SoloLeveling')"
         />
         <p>Solo Leveling</p>
       </div>
@@ -177,7 +178,7 @@
           class="PopularAnime"
           src="Bilder/Suzume.jpg"
           alt=""
-          onclick="openVideo4()"
+          onclick="openOverlay('Suzume')"
         />
         <p>Suzume</p>
       </div>
@@ -188,13 +189,13 @@
           class="PopularAnime"
           src="Bilder/SakamotoDays.jpg"
           alt=""
-          onclick="openVideo3()"
+          onclick="openOverlay()"
         />
         <p>Sakamoto Days</p>
       </div>
     </div>
 
-    <div id="videoOverlay1" class="overlay">
+    <div id="SoloLeveling" class="overlay">
       <div class="video-wrapper">
         <!-- Videoliste -->
 
@@ -203,38 +204,38 @@
           <nav>
             <ul>
               <li
-                onclick="changeVideo1('https://akershusfylke-my.sharepoint.com/:v:/g/personal/dawidc_afk_no/EYP75ycpUANGngOg-j8uLOIBpuCija9v6r4uIXKaaId6Wg?e=J6abEG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D')"
+                onclick="SoloLevelingChange('https://akershusfylke-my.sharepoint.com/:v:/g/personal/dawidc_afk_no/EYP75ycpUANGngOg-j8uLOIBpuCija9v6r4uIXKaaId6Wg?e=J6abEG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D')"
               >
                 1. I'm Used To It
               </li>
-              <li onclick="changeVideo1('Ep2SoloLeveling.mkv')">2.</li>
-              <li onclick="changeVideo1('video/Ep3SoloLeveling.mkv')">3.</li>
-              <li onclick="changeVideo1('video/Ep4SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('Ep2SoloLeveling.mkv')">2.</li>
+              <li onclick="SoloLevelingChange('video/Ep3SoloLeveling.mkv')">3.</li>
+              <li onclick="SoloLevelingChange('video/Ep4SoloLeveling.mkv')">
                 Episode 4
               </li>
-              <li onclick="changeVideo1('video/Ep5SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep5SoloLeveling.mkv')">
                 Episode 5
               </li>
-              <li onclick="changeVideo1('video/Ep6SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep6SoloLeveling.mkv')">
                 Episode 6
               </li>
-              <li onclick="changeVideo1('video/Ep7SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep7SoloLeveling.mkv')">
                 Episode 7
               </li>
-              <li onclick="changeVideo1('video/Ep8SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep8SoloLeveling.mkv')">
                 Episode 8
               </li>
-              <li onclick="changeVideo1('video/Ep9SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep9SoloLeveling.mkv')">
                 Episode 9
               </li>
-              <li onclick="changeVideo1('video/Ep10SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep10SoloLeveling.mkv')">
                 Episode 10
               </li>
-              <li onclick="changeVideo1('video/Ep11SoloLeveling.mkv')">
+              <li onclick="SoloLevelingChange('video/Ep11SoloLeveling.mkv')">
                 Episode 11
               </li>
               <li
-                onclick="changeVideo1('https://player.vimeo.com/video/1064648409')"
+                onclick="SoloLevelingChange('https://player.vimeo.com/video/1064648409')"
               >
                 Episode 12
               </li>
@@ -243,8 +244,8 @@
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo1()">GO BACK</span>
-          <video id="videoPlayer1" controls>
+          <span class="close-btn" onclick="closeVideo('SoloLeveling')">GO BACK</span>
+          <video id="SoloLevelingPlayer" controls>
             <source src="video/Ep1SoloLeveling.mkv" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
           </video>
@@ -252,33 +253,33 @@
         </div>
       </div>
     </div>
-    <div id="videoOverlay2" class="overlay">
+    <div id="OnePiece" class="overlay">
       <div class="video-wrapper">
         <!-- Videoliste -->
         <div class="video-list1">
           <p class="listEp">List Of Episodes</p>
           <nav>
           <ul>
-            <li onclick="changeVideo2('video1.mp4')">Episode 1</li>
-            <li onclick="changeVideo2('video/STANDO POWAH.mp4')">Episode 2</li>
-            <li onclick="changeVideo2('video/Suzume.mp4')">Episode 3</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 4</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 5</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 6</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 7</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 8</li>
-            <li onclick="changeVideo2('video3.mp4')">Episode 9</li>
-            <li onclick="changeVideo2('video3.mp4')">Video 10</li>
-            <li onclick="changeVideo2('video3.mp4')">Video 11</li>
-            <li onclick="changeVideo2('video3.mp4')">Video 12</li>
-            <li onclick="changeVideo2('video3.mp4')">Video 13</li>
+            <li onclick="OnePieceChange('video1.mp4')">Episode 1</li>
+            <li onclick="OnePieceChange('video/STANDO POWAH.mp4')">Episode 2</li>
+            <li onclick="OnePieceChange('video/Suzume.mp4')">Episode 3</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 4</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 5</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 6</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 7</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 8</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 9</li>
+            <li onclick="OnePieceChange('video3.mp4')">Video 10</li>
+            <li onclick="OnePieceChange('video3.mp4')">Video 11</li>
+            <li onclick="OnePieceChange('video3.mp4')">Video 12</li>
+            <li onclick="OnePieceChange('video3.mp4')">Video 13</li>
           </ul>
         </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo2()">GO BACK</span>
-          <video id="videoPlayer2" controls>
+          <span class="close-btn" onclick="closeVideo('OnePiece')">GO BACK</span>
+          <video id="OnePiecePlayer" controls>
             <source src="video1.mp4" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
           </video>
@@ -286,19 +287,19 @@
         </div>
       </div>
     </div>
-    <div id="videoOverlay4" class="overlay">
+    <div id="Suzume" class="overlay">
       <div class="headerOverlay">
         <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
         <div class="search-container">
           <input
             type="text"
-            id="searchInputVideo"
+            id="searchInputSuzume"
             placeholder="Search For Anime"
-            onkeyup="showSuggestions3()"
+            onkeyup="showResults('searchInputSuzume', 'suggestionsBoxSuzume' )"
           />
-          <div class="suggestions" id="suggestionsBoxVideo"></div>
+          <div class="suggestions" id="suggestionsBoxSuzume"></div>
         </div>
-        <h2 class="overlayh2" onclick="closeVideo4()">Homepage</h2>
+        <h2 class="overlayh2" onclick="closeVideo('Suzume')">Homepage</h2>
       </div>
       <div class="video-wrapper">
         <!-- Videoliste -->
@@ -306,14 +307,14 @@
           <p class="listEp">List Of Episodes</p>
           <nav>
           <ul>
-            <li onclick="changeVideo4('video/Suzume.mp4')">Full Movie Dub</li>
+            <li onclick="SuzumeChange('video/Suzume.mp4')">Full Movie Dub</li>
           </ul>
         </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo4()">GO BACK</span>
-          <video id="videoPlayer4" controls>
+          <span class="close-btn" onclick="closeVideo('Suzume')">GO BACK</span>
+          <video id="SuzumePlayer" controls>
             <source src="video/Suzume.mp4" type="video/mp4" />
             Din nettleser støtter ikke videoavspilling.
           </video>
