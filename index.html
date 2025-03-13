@@ -35,7 +35,7 @@
     <div id="kategorierHeader">
       <div>
       <h2 onclick="openNew()">New</h2>
-      <h2>Popular</h2>
+      <h2 onclick="openPopular()">Popular</h2>
     </div>
       <img src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
     </div>
@@ -122,6 +122,74 @@
         </div>
       </div>
     </div>
+
+
+
+    <div id="PopularPageOverlay" class="overlayForCategory">
+      <div class="headerOverlay">
+        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
+        <div class="search-container">
+          <input
+              type="text"
+              id="searchInputPopular"
+              placeholder="Search For Anime"
+              onkeyup="showResults('searchInputPopular', 'suggestionsBoxPopular' )"
+          />
+          <div class="suggestions" id="suggestionsBoxPopular"></div>
+        </div>
+        <h2 class="overlayh2" onclick="closePopular()">Homepage</h2>
+      </div>
+
+      <div class="bodyOverlay">
+        <div class="bigPillar"></div>
+
+        <div>
+          <div class="TitleOverlay"><p>Popular</p></div>
+          <div id="NewPicksFirstRow" class="PopularAnimeDiv">
+            <div class="PicAndText">
+              <img
+                class="PopularAnime"
+                src="Bilder/soloLeveling.jpg"
+                alt=""
+                onclick="openOverlay('SoloLeveling')"
+              />
+              <p>Solo Leveling</p>
+            </div>
+            <div class="PicAndText">
+              <img
+                class="PopularAnime"
+                src="Bilder/Suzume.jpg"
+                alt=""
+                onclick="openOverlay('Suzume')"
+              />
+              <p>Suzume</p>
+            </div>
+            <div class="PicAndText">
+              <img
+                class="PopularAnime"
+                src="Bilder/SakamotoDays.jpg"
+                alt=""
+                onclick="openVideo3()"
+              />
+              <p>Sakamoto Days</p>
+            </div>
+          </div>
+
+          <div id="NewPicksSecondRow" class="PopularAnimeDiv">
+            <div class="PicAndText">
+              <img
+                class="PopularAnime"
+                src="Bilder/OnePiece.jpg"
+                alt=""
+                onclick="openOverlay('OnePiece')"
+              />
+              <p>One Piece</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
     <button id="RandomAnime" onclick="takeMeAnywhere()">

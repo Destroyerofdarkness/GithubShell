@@ -12,7 +12,12 @@ function openNew() {
 function closeNew() {
     document.getElementById("NewPageOverlay").style.display = "none";
 }
-
+function openPopular() {
+    document.getElementById("PopularPageOverlay").style.display = "flex";
+}
+function closePopular() {
+    document.getElementById("PopularPageOverlay").style.display = "none";
+}
 function openOverlay(id) {
     // Close all overlays
     var overlays = document.getElementsByClassName('overlay');

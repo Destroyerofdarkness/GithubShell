@@ -184,6 +184,12 @@ body {
   background-size: cover;
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: var(--basicColor);
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 .headerOverlay {
   background-color: var(--basicColor); /* Default solid color */
@@ -218,14 +224,8 @@ body {
 #Suzume {
   background-image: url(Bilder/SuzumeBackground.jpg);
 }
-#NewPageOverlay {
-  background-color: var(--basicColor);
-  display: none;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
+
+
 /*Rammen for videospilleren*/
 .video-wrapper {
   display: flex;
