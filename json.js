@@ -20,6 +20,13 @@ function openOverlayForCategory(id) {
 function closeOverlayForCategory(id){
 document.getElementById(id).style.display = "none";
 }
+function CloseAllOverlay() {
+    // Close all overlays
+    var overlays = document.getElementsByClassName('overlay');
+    for (var i = 0; i < overlays.length; i++) {
+      overlays[i].style.display = 'none';
+    }
+}
 // Overlayen for Videor
 function openOverlay(id) {
     // Close all overlays

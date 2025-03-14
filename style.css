@@ -206,6 +206,11 @@ body {
     backdrop-filter 0.4s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+.headerOverlay img{
+  width: auto;
+  height: 60px;
+  padding-top: 35px;
+}
 .bodyOverlay {
   padding-top: 90px;
   display: flex;
@@ -387,6 +392,9 @@ input {
 .MenuPillar div nav p{
   font-size: 3em;
   font-family: var(--Lalezar);
+}
+.MenuPillar div nav ul{
+  list-style: none;
 }
 .MenuPillar div nav{
   padding-left: 60px;
