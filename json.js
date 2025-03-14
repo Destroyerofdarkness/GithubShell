@@ -5,19 +5,22 @@ function openMenuSection(){
 function closeMenuSection(){
     document.getElementById("menuSection").style.display = "none"
 }
-// Overlayen for New Kategorien
-function openNew() {
-    document.getElementById("NewPageOverlay").style.display = "flex";
+// Overlayen for kategoriene sine overlay
+
+function openOverlayForCategory(id) {
+    // Close all overlays
+    var overlays = document.getElementsByClassName('overlayForCategory');
+    for (var i = 0; i < overlays.length; i++) {
+      overlays[i].style.display = 'none';
+    }
+    
+    // Open the selected overlay
+    document.getElementById(id).style.display = 'flex';
+  }
+function closeOverlayForCategory(id){
+document.getElementById(id).style.display = "none";
 }
-function closeNew() {
-    document.getElementById("NewPageOverlay").style.display = "none";
-}
-function openPopular() {
-    document.getElementById("PopularPageOverlay").style.display = "flex";
-}
-function closePopular() {
-    document.getElementById("PopularPageOverlay").style.display = "none";
-}
+// Overlayen for Videor
 function openOverlay(id) {
     // Close all overlays
     var overlays = document.getElementsByClassName('overlay');
@@ -27,10 +30,6 @@ function openOverlay(id) {
     
     // Open the selected overlay
     document.getElementById(id).style.display = 'flex';
-  }
-  
-  function closeOverlay(id) {
-    document.getElementById(id).style.display = 'none';
   }
   function closeVideo(id) {
     document.getElementById(id).style.display = "none";

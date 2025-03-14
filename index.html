@@ -34,8 +34,8 @@
     </div>
     <div id="kategorierHeader">
       <div>
-      <h2 onclick="openNew()">New</h2>
-      <h2 onclick="openPopular()">Popular</h2>
+      <h2 onclick="openOverlayForCategory('NewPageOverlay')">New</h2>
+      <h2 onclick="openOverlayForCategory('PopularPageOverlay')">Popular</h2>
     </div>
       <img src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
     </div>
@@ -70,7 +70,7 @@
           />
           <div class="suggestions" id="suggestionsBoxNew"></div>
         </div>
-        <h2 class="overlayh2" onclick="closeNew()">Homepage</h2>
+        <h2 class="overlayh2" onclick="closeOverlayForCategory('NewPageOverlay')">Homepage</h2>
       </div>
 
       <div class="bodyOverlay">
@@ -137,7 +137,7 @@
           />
           <div class="suggestions" id="suggestionsBoxPopular"></div>
         </div>
-        <h2 class="overlayh2" onclick="closePopular()">Homepage</h2>
+        <h2 class="overlayh2" onclick="closeOverlayForCategory('PopularPageOverlay')">Homepage</h2>
       </div>
 
       <div class="bodyOverlay">
