@@ -106,14 +106,12 @@ h2 {
   background-color: var(--white);
 }
 /*Titlene på Animeet på overlayen*/
-h3 {
+.h3 {
   text-align: center;
   font-size: 5em;
   font-family: var(--Lalezar);
   font-weight: 900;
-  padding-bottom: 100px;
-  position: relative;
-  bottom: 15%;
+  
 }
 .Logo {
   display: flex;
@@ -374,7 +372,7 @@ input {
   left: 800px;
 }
 /* Videoliste (kun tekst) */
-/*section*/
+/*Menu section*/
 #menuSection {
   display: none;
   position: fixed;
@@ -463,6 +461,7 @@ input {
       font-size: 2em; /* Mindre tekststørrelse */
   }
 .video-wrapper {
+  padding-top: 100px;
   flex-direction: column; /* Endrer retningen til kolonne */
 }
 
@@ -471,5 +470,11 @@ input {
   min-height: 200px; /* Minimumshøyde for å sikre at den er synlig */
   max-height: 300px; /* Begrens maksimal høyde */
   overflow-y: auto; /* Legg til scroll hvis innholdet er for langt */
+}
+.video-container{
+  padding-bottom: 60px ;
+}
+.h3{
+  color: var(--buttonAndText);
 }
 }
