@@ -114,33 +114,46 @@ function showResults(inputId, suggestionsBoxId) {
         return;
     }
 
-    // Show filtered suggestions with images and functions
-    filteredSuggestions.forEach(item => {
-        let div = document.createElement("div");
-        div.classList.add("suggestion-item");
+    // Use switch case to handle different types of input or scenarios
+    switch (inputId) {
+        case "searchInputVideo":
+        case "searchInputPopular":
+        case "searchInput":
+        case "searchInputSuzume":    
+        case "searchInputNew":
+            // Handle both search inputs the same way
+            filteredSuggestions.forEach(item => {
+                let div = document.createElement("div");
+                div.classList.add("suggestion-item");
 
-        // Create an image element
-        let img = document.createElement("img");
-        img.src = item.image; // Set the image source from the item data
-        img.alt = item.name;  // Set alt text for the image
-        img.classList.add("suggestion-img");
+                // Create an image element
+                let img = document.createElement("img");
+                img.src = item.image; // Set the image source from the item data
+                img.alt = item.name;  // Set alt text for the image
+                img.classList.add("suggestion-img");
 
-        // Create a text node for the name
-        let text = document.createTextNode(item.name);
+                // Create a text node for the name
+                let text = document.createTextNode(item.name);
 
-        // Append the image and text to the div
-        div.appendChild(img);
-        div.appendChild(text);
+                // Append the image and text to the div
+                div.appendChild(img);
+                div.appendChild(text);
 
-        // Add onclick function to the div
-        div.onclick = item.action; // Link the function to the onclick event
+                // Add onclick function to the div
+                div.onclick = item.action; // Link the function to the onclick event
 
-        // Append the div to the suggestions box
-        suggestionsBox.appendChild(div);
-    });
+                // Append the div to the suggestions box
+                suggestionsBox.appendChild(div);
+            });
 
-    // Display suggestions only if there are matches
-    suggestionsBox.style.display = "block";
+            // Display suggestions only if there are matches
+            suggestionsBox.style.display = "block";
+            break;
+
+        default:
+            console.log("Unknown input ID:", inputId);
+            break;
+    }
 }
 
 // Hide suggestions when clicking outside
@@ -155,4 +168,3 @@ document.addEventListener("click", function(event) {
         }
     });
 });
-

@@ -81,17 +81,23 @@ h2 {
 }
 #kategorierHeader {
   display: flex;
-  gap: 400px;
+  align-items: center;
+  gap: 200px;
 }
-#kategorierHeader div{
+#kategorierHeader div {
   display: flex;
+  flex-direction: row;
   gap: 100px;
 }
 #kategorierHeader img {
-padding-top: 35px;
-display: flex;
-width: auto;
-height: 60px;
+  display: flex;
+  width: auto;
+  height: 60px;
+}
+.kategorierVideo {
+  display: flex;
+  align-items: center;
+  gap: 100px;
 }
 .bigPillar {
   margin: auto;
@@ -174,6 +180,7 @@ body {
   align-items: center;
   z-index: 1000;
   background-size: cover;
+  overflow-y: scroll;
 }
 .overlayForCategory {
   position: fixed;
@@ -206,10 +213,10 @@ body {
     backdrop-filter 0.4s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.headerOverlay img{
+.OverlayMenu {
+  
   width: auto;
   height: 60px;
-  padding-top: 35px;
 }
 .bodyOverlay {
   padding-top: 90px;
@@ -230,7 +237,6 @@ body {
   background-image: url(Bilder/SuzumeBackground.jpg);
 }
 
-
 /*Rammen for videospilleren*/
 .video-wrapper {
   display: flex;
@@ -248,6 +254,7 @@ body {
   width: 30%;
   max-height: 500px;
   overflow-y: auto;
+  z-index: 0; /* Sikrer at videolisten er over andre elementer */
 }
 
 .video-list1 p {
@@ -284,6 +291,7 @@ body {
   width: 100%;
   max-width: 1000px;
   flex-direction: column;
+  z-index: 1; /* Sikrer at videoavspilleren er under videolisten */
 }
 
 /* Størrelse på video */
@@ -381,26 +389,27 @@ input {
   overflow-x: hidden;
 }
 .MenuPillar {
-  display: flex;
+  display: block;
   justify-content: center;
   height: 100%;
   width: 20%;
   background-color: var(--overlayAndList);
   margin-left: auto;
   opacity: 100%;
+  overflow-y: scroll;
 }
-.MenuPillar div nav p{
+.MenuPillar div nav p {
   font-size: 3em;
   font-family: var(--Lalezar);
 }
-.MenuPillar div nav ul{
+.MenuPillar div nav ul {
   list-style: none;
 }
-.MenuPillar div nav{
+.MenuPillar div nav {
   padding-left: 60px;
 }
 
-#closeBtnMenu{
+#closeBtnMenu {
   width: max-content;
   font-size: 3em;
   justify-content: center;
@@ -411,7 +420,7 @@ input {
   transition: 100ms;
 }
 
-#closeBtnMenu:hover{
+#closeBtnMenu:hover {
   background-color: var(--basicColor);
 }
 :root {
@@ -423,4 +432,44 @@ input {
   --overlayColorTransparent: #6b6b6b82;
   --Bangers: "Bangers", cursive;
   --Lalezar: "Lalezar", cursive;
+}
+
+  @media (max-width: 960px) {
+    .search-container {
+        display: none; /* Skjul søkefeltet */
+    }
+
+    #kategorierHeader div {
+        display: none; /* Skjul "New" og "Popular"-knappene */
+    }
+
+    #kategorierHeader img {
+        display: block; /* Vis hamburger-ikonet */
+    }
+    .overlayh2 {
+      display: none;
+    }
+    .headerOverlay div img {
+      display: block;
+    }
+    .MenuPillar {
+      width: 50%; /* Bredden økes for mindre skjermer */
+  }
+  .kategorierVideo img{
+    display: block;
+  }
+  #closeBtnMenu {
+      width: 100%; /* Full bredde på små skjermer */
+      font-size: 2em; /* Mindre tekststørrelse */
+  }
+.video-wrapper {
+  flex-direction: column; /* Endrer retningen til kolonne */
+}
+
+.video-list1 {
+  width: 100%; /* Full bredde på små skjermer */
+  min-height: 200px; /* Minimumshøyde for å sikre at den er synlig */
+  max-height: 300px; /* Begrens maksimal høyde */
+  overflow-y: auto; /* Legg til scroll hvis innholdet er for langt */
+}
 }

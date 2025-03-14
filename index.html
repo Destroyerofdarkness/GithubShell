@@ -43,21 +43,6 @@
   </header>
 
   <body>
-  <div id="menuSection">
-    <div class="MenuPillar">
-      <div>
-        <button id="closeBtnMenu" onclick="closeMenuSection()">Close Menu</button>
-         <nav>
-          <p>Menu Section</p>
-          <ul>
-            <li>Popular</li>
-            <li>New</li>
-            <li onclick="CloseAllOverlay()">Homepage</li>
-          </ul>
-         </nav>
-      </div> 
-    </div>
-  </div>
 
     <div id="NewPageOverlay" class="overlayForCategory">
       <div class="headerOverlay">
@@ -71,9 +56,11 @@
           />
           <div class="suggestions" id="suggestionsBoxNew"></div>
         </div>
+        <div id="kategorierHeader">
         <h2 class="overlayh2" onclick="closeOverlayForCategory('NewPageOverlay')">Homepage</h2>
         <h2 class="overlayh2" onclick="openOverlayForCategory('PopularPageOverlay')">Popular</h2>
-        <img src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+        <img class="OverlayMenu" src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+      </div>
       </div>
 
       <div class="bodyOverlay">
@@ -140,8 +127,11 @@
           />
           <div class="suggestions" id="suggestionsBoxPopular"></div>
         </div>
-        <h2 class="overlayh2" onclick="closeOverlayForCategory('PopularPageOverlay')">Homepage</h2>
-        <h2 class="overlayh2" onclick="openOverlayForCategory('NewPageOverlay')">New</h2>
+        <div id="kategorierHeader">
+          <h2 class="overlayh2" onclick="closeOverlayForCategory('PopularPageOverlay')">Homepage</h2>
+          <h2 class="overlayh2" onclick="openOverlayForCategory('NewPageOverlay')">New</h2>
+          <img class="OverlayMenu" src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+        </div>
       </div>
 
       <div class="bodyOverlay">
@@ -194,6 +184,8 @@
       </div>
     </div>
 
+
+    
     <!-- Trending section -->
     <img id="Animepic" src="Bilder/Picture_Backround1.jpg" alt="Anime" />
     <button id="RandomAnime" onclick="takeMeAnywhere()">
@@ -371,31 +363,51 @@
           />
           <div class="suggestions" id="suggestionsBoxSuzume"></div>
         </div>
+        <div class="kategorierVideo">
         <h2 class="overlayh2" onclick="closeVideo('Suzume')">Homepage</h2>
+        <h2  class="overlayh2" onclick="openOverlayForCategory('NewPageOverlay')">New</h2>
+      <h2 class="overlayh2" onclick="openOverlayForCategory('PopularPageOverlay')">Popular</h2>
+      <img class="OverlayMenu" src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+      </div>
       </div>
       <div class="video-wrapper">
         <!-- Videoliste -->
         <div class="video-list1">
-          <p class="listEp">List Of Episodes</p>
-          <nav>
-          <ul>
-            <li onclick="SuzumeChange('video/Suzume.mp4')">Full Movie Dub</li>
-          </ul>
-        </nav>
+            <p class="listEp">List Of Episodes</p>
+            <nav>
+                <ul>
+                    <li onclick="SuzumeChange('video/Suzume.mp4')">Full Movie Dub</li>
+                </ul>
+            </nav>
         </div>
         <!-- Videospiller -->
         <div class="video-container">
-          <span class="close-btn" onclick="closeVideo('Suzume')">GO BACK</span>
-          <video id="SuzumePlayer" controls>
-            <source src="video/Suzume.mp4" type="video/mp4" />
-            Din nettleser støtter ikke videoavspilling.
-          </video>
-          <h3>Suzume</h3>
+            <span class="close-btn" onclick="closeVideo('Suzume')">GO BACK</span>
+            <video id="SuzumePlayer" controls>
+                <source src="video/Suzume.mp4" type="video/mp4" />
+                Din nettleser støtter ikke videoavspilling.
+            </video>
+            <h3>Suzume</h3>
         </div>
-      </div>
+    </div>
     </div>
 
-    <!-- Overlay for New Anime Page -->
+<!-- BurgerMenu -->
+    <div id="menuSection">
+      <div class="MenuPillar">
+        <div>
+          <button id="closeBtnMenu" onclick="closeMenuSection()">Close Menu</button>
+           <nav>
+            <p>Menu Section</p>
+            <ul>
+              <li>Popular</li>
+              <li>New</li>
+              <li onclick="CloseAllOverlay()">Homepage</li>
+            </ul>
+           </nav>
+        </div> 
+      </div>
+    </div>
     <script src="json.js"></script>
   </body>
   <footer>
