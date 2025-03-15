@@ -82,12 +82,12 @@ h2 {
 #kategorierHeader {
   display: flex;
   align-items: center;
-  gap: 200px;
+  gap: 400px;
 }
 #kategorierHeader div {
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 80px;
 }
 #kategorierHeader img {
   display: flex;
@@ -129,9 +129,15 @@ body {
 }
 /*Bilde øverst på homepagen*/
 #Animepic {
-  opacity: 0.5;
-  width: 110%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 2000px;
+  height: 1000px;
+  background-image: url(Bilder/Picture_Backround1.jpg);
   transform: translate(-8px, -5px);
+  background-size: cover;
 }
 /*Titlene på kategoriene*/
 .pTitle {
@@ -366,19 +372,16 @@ input {
   background-color: var(--buttonAndText);
   font-size: 3em;
   font-family: var(--Bangers);
+  opacity: 100%;
   color: var(--white);
-  position: absolute;
-  bottom: 250px;
-  left: 800px;
 }
 /* Videoliste (kun tekst) */
 /*Menu section*/
 #menuSection {
-  display: none;
+  display: flex;
   position: fixed;
   flex-direction: row;
-  flex-direction: column;
-  background-color: var(--overlayColorTransparent);
+  background-color: var(--white);
   width: 100%;
   height: 100%;
   z-index: 1000;
@@ -387,26 +390,32 @@ input {
   overflow-x: hidden;
 }
 .MenuPillar {
-  display: block;
+  display: flex;
   justify-content: center;
   height: 100%;
   width: 20%;
   background-color: var(--overlayAndList);
   margin-left: auto;
-  opacity: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
-.MenuPillar div nav p {
+#MenuPillarTitle {
   font-size: 3em;
   font-family: var(--Lalezar);
+  color: var(--buttonAndText);
+  padding-left: 70px;
+  
 }
-.MenuPillar div nav ul {
-  list-style: none;
+#MenuPillarCategories  {
+  display: flex;
+  flex-direction: column;
 }
-.MenuPillar div nav {
-  padding-left: 60px;
+#MenuPillarCategories p{
+font-size: 2em;
+align-self: center;
+font-family: var(--Lalezar);
+color: var(--overlayColor);
 }
-
 #closeBtnMenu {
   width: max-content;
   font-size: 3em;
@@ -417,7 +426,10 @@ input {
   background-color: var(--overlayColor);
   transition: 100ms;
 }
-
+#MenuSectionSearchContainer{
+  flex-grow: 1; /* Allows it to stretch */
+  max-width: 400px; /* Adjust width */
+}
 #closeBtnMenu:hover {
   background-color: var(--basicColor);
 }
@@ -461,10 +473,12 @@ input {
       font-size: 2em; /* Mindre tekststørrelse */
   }
 .video-wrapper {
-  padding-top: 100px;
+  padding-top: 65px;
   flex-direction: column; /* Endrer retningen til kolonne */
 }
-
+#MenuSectionSearchContainer{
+  display: block;
+}
 .video-list1 {
   width: 100%; /* Full bredde på små skjermer */
   min-height: 200px; /* Minimumshøyde for å sikre at den er synlig */
@@ -476,5 +490,75 @@ input {
 }
 .h3{
   color: var(--buttonAndText);
+}
+#MenuPillarTitle{
+  padding-left: 0;
+}
+.MenuPillar{
+  padding: 0;
+  width: 300px;
+}
+#Animepic{
+  width: 100%;
+  background-image: url(Bilder/Kaneki_KenBackground_mobile.jpg_large);
+}
+}
+@media (max-width: 1200px) {
+    .search-container {
+        display: none; /* Skjul søkefeltet */
+    }
+
+    #kategorierHeader div {
+        display: none; /* Skjul "New" og "Popular"-knappene */
+    }
+
+    #kategorierHeader img {
+        display: block; /* Vis hamburger-ikonet */
+    }
+    .overlayh2 {
+      display: none;
+    }
+    .headerOverlay div img {
+      display: block;
+    }
+    .MenuPillar {
+      width: 50%; /* Bredden økes for mindre skjermer */
+  }
+  .kategorierVideo img{
+    display: block;
+  }
+  #closeBtnMenu {
+      width: 100%; /* Full bredde på små skjermer */
+      font-size: 2em; /* Mindre tekststørrelse */
+  }
+.video-wrapper {
+  padding-top: 65px;
+  flex-direction: column; /* Endrer retningen til kolonne */
+}
+#MenuSectionSearchContainer{
+  display: block;
+}
+.video-list1 {
+  width: 100%; /* Full bredde på små skjermer */
+  min-height: 200px; /* Minimumshøyde for å sikre at den er synlig */
+  max-height: 300px; /* Begrens maksimal høyde */
+  overflow-y: auto; /* Legg til scroll hvis innholdet er for langt */
+}
+.video-container{
+  padding-bottom: 60px ;
+}
+.h3{
+  color: var(--buttonAndText);
+}
+#MenuPillarTitle{
+  padding-left: 0;
+}
+.MenuPillar{
+  padding: 0;
+  width: 300px;
+}
+#Animepic{
+  width: 100%;
+  background-image: url(Bilder/Kaneki_KenBackground_mobile.jpg_large);
 }
 }

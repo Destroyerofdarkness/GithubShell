@@ -6,7 +6,19 @@ function closeMenuSection(){
     document.getElementById("menuSection").style.display = "none"
 }
 // Overlayen for kategoriene sine overlay
-
+function openOverlayForCategoryAndCloseVideo(id) {
+    // Close all overlays
+    var overlays = document.getElementsByClassName('overlayForCategory');
+    for (var i = 0; i < overlays.length; i++) {
+      overlays[i].style.display = 'none';
+    }
+    var overlaysVideo = document.getElementsByClassName('overlay');
+    for (var i = 0; i < overlaysVideo.length; i++) {
+      overlaysVideo[i].style.display = 'none';
+    }
+    // Open the selected overlay
+    document.getElementById(id).style.display = 'flex';
+  }
 function openOverlayForCategory(id) {
     // Close all overlays
     var overlays = document.getElementsByClassName('overlayForCategory');
@@ -23,8 +35,10 @@ document.getElementById(id).style.display = "none";
 function CloseAllOverlay() {
     // Close all overlays
     var overlays = document.getElementsByClassName('overlay');
+    let videoPlayer = document.getElementsByClassName('Videospiller')
     for (var i = 0; i < overlays.length; i++) {
       overlays[i].style.display = 'none';
+      videoPlayer.pause()
     }
 }
 // Overlayen for Videor
@@ -116,6 +130,9 @@ function showResults(inputId, suggestionsBoxId) {
 
     // Use switch case to handle different types of input or scenarios
     switch (inputId) {
+        case "searchInputMenu":
+        case "searchInputSoloLeveling":
+        case "searchInputOnePiece":
         case "searchInputVideo":
         case "searchInputPopular":
         case "searchInput":
