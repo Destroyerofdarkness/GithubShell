@@ -416,6 +416,9 @@ align-self: center;
 font-family: var(--Lalezar);
 color: var(--overlayColor);
 }
+#MenuPillarCategories p:hover{
+  color: var(--overlayColor);
+  }
 #closeBtnMenu {
   width: max-content;
   font-size: 3em;
