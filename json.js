@@ -56,7 +56,11 @@ function openOverlay(id) {
     document.getElementById(id).style.display = "none";
   }
 // Funksjon for å bytte video
-
+function SakamotoChange(videoSrc) {
+    let videoPlayer = document.getElementById("SakamotoDaysPlayer");
+    videoPlayer.src = videoSrc;
+    videoPlayer.play(); // Starter automatisk
+}
 function SoloLevelingChange(videoSrc) {
     let videoPlayer = document.getElementById("SoloLevelingPlayer");
     videoPlayer.src = videoSrc;
@@ -86,7 +90,7 @@ window.addEventListener("scroll", function () {
 });
 //Transparent scrolling for overlay headeren
 // Funksjon for knappen Take me Anywhere
-const randomId = ['OnePiece', 'SoloLeveling', 'Suzume'];
+const randomId = ['OnePiece', 'SoloLeveling', 'Suzume', 'SakamotoDays'];
 
 function takeMeAnywhere() {
     let randomFunction = Math.floor(Math.random() * randomId.length)
@@ -100,7 +104,8 @@ function takeMeAnywhere() {
 const suggestions = [
     { name: "One Piece", image:"Bilder/OnePiece.jpg", action: function() { openOverlay('OnePiece'); } },
     { name: "Solo Leveling", image:"Bilder/soloLeveling.jpg", action: function() { openOverlay('SoloLeveling'); } },
-    { name: "Suzume", image:"Bilder/Suzume.jpg", action:  function() { openOverlay('Suzume'); } }
+    { name: "Suzume", image:"Bilder/Suzume.jpg", action:  function() { openOverlay('Suzume'); } },
+    { name: "Sakamoto Days", image:"Bilder/SakamotoDays.jpg", action:  function() { openOverlay('SakamotoDays'); } }
 ];
 
 // Function to show suggestions
@@ -130,6 +135,7 @@ function showResults(inputId, suggestionsBoxId) {
 
     // Use switch case to handle different types of input or scenarios
     switch (inputId) {
+        case "searchInputSakamotoDays":
         case "searchInputMenu":
         case "searchInputSoloLeveling":
         case "searchInputOnePiece":

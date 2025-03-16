@@ -90,7 +90,7 @@
                 class="PopularAnime"
                 src="Bilder/SakamotoDays.jpg"
                 alt=""
-                onclick="openVideo3()"
+                onclick="openOverlay('SakamotoDays')"
               />
               <p>Sakamoto Days</p>
             </div>
@@ -163,7 +163,7 @@
                 class="PopularAnime"
                 src="Bilder/SakamotoDays.jpg"
                 alt=""
-                onclick="openVideo3()"
+                onclick="openOverlay('SakamotoDays')"
               />
               <p>Sakamoto Days</p>
             </div>
@@ -217,7 +217,7 @@
           class="PopularAnime"
           src="Bilder/SakamotoDays.jpg"
           alt=""
-          onclick="openVideo3()"
+          onclick="openOverlay('SakamotoDays')"
         />
         <p>Sakamoto Days</p>
       </div>
@@ -252,7 +252,7 @@
           class="PopularAnime"
           src="Bilder/SakamotoDays.jpg"
           alt=""
-          onclick="openOverlay()"
+          onclick="openOverlay('SakamotoDays')"
         />
         <p>Sakamoto Days</p>
       </div>
@@ -368,10 +368,10 @@
             <li onclick="OnePieceChange('video3.mp4')">Episode 7</li>
             <li onclick="OnePieceChange('video3.mp4')">Episode 8</li>
             <li onclick="OnePieceChange('video3.mp4')">Episode 9</li>
-            <li onclick="OnePieceChange('video3.mp4')">Video 10</li>
-            <li onclick="OnePieceChange('video3.mp4')">Video 11</li>
-            <li onclick="OnePieceChange('video3.mp4')">Video 12</li>
-            <li onclick="OnePieceChange('video3.mp4')">Video 13</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 10</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 11</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 12</li>
+            <li onclick="OnePieceChange('video3.mp4')">Episode 13</li>
           </ul>
         </nav>
         </div>
@@ -424,6 +424,59 @@
                 Din nettleser støtter ikke videoavspilling.
             </video>
             <div class="h3">Suzume</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="SakamotoDays" class="overlay">
+      <div class="headerOverlay">
+        <img class="Logo" src="Bilder/Logo AniHaven.png" alt="" />
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInputSakamotoDays"
+            placeholder="Search For Anime"
+            onkeyup="showResults('searchInputSakamotoDays', 'suggestionsSakamotoDays' )"
+          />
+          <div class="suggestions" id="suggestionsSakamotoDays"></div>
+        </div>
+        <div class="kategorierVideo">
+        <h2 class="overlayh2" onclick="closeVideo('SakamotoDays')">Homepage</h2>
+        <h2  class="overlayh2" onclick="openOverlayForCategoryAndCloseVideo('NewPageOverlay')">New</h2>
+      <h2 class="overlayh2" onclick="openOverlayForCategoryAndCloseVideo('PopularPageOverlay')">Popular</h2>
+      <img class="OverlayMenu" src="Bilder/MenuSection.png" alt="MenuSection" onclick="openMenuSection()">
+      </div>
+      </div>
+      <div class="video-wrapper">
+        <!-- Videoliste -->
+        <div class="video-list1">
+          <p class="listEp">List Of Episodes</p>
+          <nav>
+          <ul>
+            <li onclick="SakamotoChange('video1.mp4')">Episode 1</li>
+            <li onclick="SakamotoChange('video/STANDO POWAH.mp4')">Episode 2</li>
+            <li onclick="SakamotoChange('video/Suzume.mp4')">Episode 3</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 4</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 5</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 6</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 7</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 8</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 9</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 10</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 11</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 12</li>
+            <li onclick="SakamotoChange('video3.mp4')">Episode 13</li>
+          </ul>
+        </nav>
+        </div>
+        <!-- Videospiller -->
+        <div class="video-container">
+          <span class="close-btn" onclick="closeVideo('SakamotoDays')">GO BACK</span>
+          <video class="Videospiller" id="SakamotoDaysPlayer" controls>
+            <source src="video1.mp4" type="video/mp4" />
+            Din nettleser støtter ikke videoavspilling.
+          </video>
+          <div class="h3">SakamotoDays</div>
         </div>
       </div>
     </div>
