@@ -35,10 +35,8 @@ document.getElementById(id).style.display = "none";
 function CloseAllOverlay() {
     // Close all overlays
     var overlays = document.getElementsByClassName('overlay');
-    let videoPlayer = document.getElementsByClassName('Videospiller')
     for (var i = 0; i < overlays.length; i++) {
       overlays[i].style.display = 'none';
-      videoPlayer.pause()
     }
 }
 // Overlayen for Videor

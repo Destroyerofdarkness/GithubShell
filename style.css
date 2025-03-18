@@ -381,7 +381,7 @@ input {
 /* Videoliste (kun tekst) */
 /*Menu section*/
 #menuSection {
-  display: flex;
+  display: none;
   position: fixed;
   flex-direction: row;
   background-color: var(--white);
